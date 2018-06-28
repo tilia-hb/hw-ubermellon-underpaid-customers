@@ -60,7 +60,7 @@ customer_orders_file = open("customer-orders.txt","r")
 def get_underpaid(invoices):
     """Grabs order info from a txt file and checks for mismatches in payment"""
     customer = " "
-    n = 10
+    
     while True:
         line = customer_orders_file.readline()
         if line == "":
@@ -75,6 +75,6 @@ def get_underpaid(invoices):
 
         if customer_expected != customer_paid:
             print(customer_first_name, "paid {:.2f}, expected {:.2f}".format(customer_paid, customer_expected))
-        n -= 1
+        
 
 get_underpaid(customer_orders_file)
